@@ -13,6 +13,9 @@ class _AddUserFormState extends State<AddUserForm> {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _phoneController = TextEditingController();
+  final _usernameController = TextEditingController();
+  final _addressController = TextEditingController();
+  final _companyController = TextEditingController();
 
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
@@ -20,8 +23,7 @@ class _AddUserFormState extends State<AddUserForm> {
       final existingUsers = userProvider.users;
 
       final emailExists = existingUsers.any(
-            (u) => u.email.trim().toLowerCase() ==
-            _emailController.text.trim().toLowerCase(),
+            (u) => u.email.trim().toLowerCase() == _emailController.text.trim().toLowerCase(),
       );
 
       final phoneExists = existingUsers.any(
@@ -43,6 +45,9 @@ class _AddUserFormState extends State<AddUserForm> {
         name: _nameController.text,
         email: _emailController.text,
         phone: _phoneController.text,
+        username: _usernameController.text,
+        address: _addressController.text,
+        company: _companyController.text,
       );
 
       userProvider.addUser(newUser);
@@ -67,6 +72,35 @@ class _AddUserFormState extends State<AddUserForm> {
     );
   }
 
+  Widget _buildField({
+    required TextEditingController controller,
+    required String label,
+    required String hint,
+    required String iconPath,
+    required String validationMessage,
+    TextInputType keyboardType = TextInputType.text,
+  }) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: TextFormField(
+        controller: controller,
+        keyboardType: keyboardType,
+        decoration: InputDecoration(
+          hintText: hint,
+          labelText: label,
+          prefixIcon: Padding(
+            padding: EdgeInsets.all(12),
+            child: Image.asset(iconPath, width: 24),
+          ),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+          filled: true,
+          fillColor: Colors.white,
+        ),
+        validator: (value) => value!.isEmpty ? validationMessage : null,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,71 +114,50 @@ class _AddUserFormState extends State<AddUserForm> {
           key: _formKey,
           child: Column(
             children: [
-              // Name Field
-              TextFormField(
+              _buildField(
                 controller: _nameController,
-                decoration: InputDecoration(
-                  hintText: 'Enter name',
-                  labelText: 'Name',
-                  prefixIcon: Padding(
-                    padding: EdgeInsets.all(12),
-                    child: Image.asset('assets/icons/user.png', width: 24),
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  filled: true,
-                  fillColor: Colors.white,
-                ),
-                validator: (value) =>
-                value!.isEmpty ? 'Name cannot be empty' : null,
+                label: 'Name',
+                hint: 'Enter name',
+                iconPath: 'assets/icons/user.png',
+                validationMessage: 'Name cannot be empty',
               ),
-              SizedBox(height: 16),
-
-              // Email Field
-              TextFormField(
+              _buildField(
+                controller: _usernameController,
+                label: 'Username',
+                hint: 'Enter username',
+                iconPath: 'assets/icons/user.png',
+                validationMessage: 'Username cannot be empty',
+              ),
+              _buildField(
                 controller: _emailController,
-                decoration: InputDecoration(
-                  hintText: 'Enter email',
-                  labelText: 'Email',
-                  prefixIcon: Padding(
-                    padding: EdgeInsets.all(12),
-                    child: Image.asset('assets/icons/mail.png', width: 24),
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  filled: true,
-                  fillColor: Colors.white,
-                ),
-                validator: (value) =>
-                value!.isEmpty ? 'Email cannot be empty' : null,
+                label: 'Email',
+                hint: 'Enter email',
+                iconPath: 'assets/icons/mail.png',
+                validationMessage: 'Email cannot be empty',
               ),
-              SizedBox(height: 16),
-
-              // Phone Field
-              TextFormField(
+              _buildField(
                 controller: _phoneController,
+                label: 'Phone',
+                hint: 'Enter phone number',
+                iconPath: 'assets/icons/call.png',
+                validationMessage: 'Phone number required',
                 keyboardType: TextInputType.phone,
-                decoration: InputDecoration(
-                  hintText: 'Enter phone number',
-                  labelText: 'Phone',
-                  prefixIcon: Padding(
-                    padding: EdgeInsets.all(12),
-                    child: Image.asset('assets/icons/call.png', width: 24),
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  filled: true,
-                  fillColor: Colors.white,
-                ),
-                validator: (value) =>
-                value!.isEmpty ? 'Phone number required' : null,
+              ),
+              _buildField(
+                controller: _addressController,
+                label: 'Address',
+                hint: 'Enter address',
+                iconPath: 'assets/icons/location.png',
+                validationMessage: 'Address cannot be empty',
+              ),
+              _buildField(
+                controller: _companyController,
+                label: 'Company',
+                hint: 'Enter company name',
+                iconPath: 'assets/icons/company.png',
+                validationMessage: 'Company name cannot be empty',
               ),
               SizedBox(height: 24),
-
-              // Submit Button
               ElevatedButton(
                 onPressed: _submitForm,
                 style: ElevatedButton.styleFrom(
