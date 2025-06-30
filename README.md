@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/77a271ef-a67d-46bb-a741-1d7be213377b)![image](https://github.com/user-attachments/assets/f536d61a-0321-4cee-b02d-043b288ec8f6)# user_list_app - Flutter User Management App
+# user_list_app - Flutter User Management App
 
 This is a beautiful Flutter app made as part of the **SeekHelpers assignment**. It allows users to:
 
