@@ -1,4 +1,4 @@
-# user_list_app - Flutter User Management App
+![image](https://github.com/user-attachments/assets/77a271ef-a67d-46bb-a741-1d7be213377b)![image](https://github.com/user-attachments/assets/f536d61a-0321-4cee-b02d-043b288ec8f6)# user_list_app - Flutter User Management App
 
 This is a beautiful Flutter app made as part of the **SeekHelpers assignment**. It allows users to:
 
@@ -27,31 +27,32 @@ All this is built with a clean UI, proper state management using Provider, and F
 > Add your screenshots inside a folder named `screenshots/` in the project root and GitHub will render them.
 
 ###  Home Page
-![image](https://github.com/user-attachments/assets/d9355bea-08fe-4e3d-ac62-04f9cb63658d)
+![image](https://github.com/user-attachments/assets/ce2f3912-b82f-4f02-a38a-dbaca591b1ca)
+
+### User Details 
+![image](https://github.com/user-attachments/assets/c078dfcb-61f5-481f-a96c-ded795f1852d)
+
+### Add new User page 
+
+![image](https://github.com/user-attachments/assets/f3f08a3c-42b3-4ccb-ac17-9d3c191544c9)
+
+![image](https://github.com/user-attachments/assets/be9a2ad8-2b33-4f77-8cf8-bbc5fafb2e56)
+
+### Successfully User added
+![image](https://github.com/user-attachments/assets/e727c130-0a9f-4140-bd5d-4b331b0f5f89)
+
 
 ### search by name 
-![image](https://github.com/user-attachments/assets/f2be2421-8422-4643-abf8-2306166ade50)
+![image](https://github.com/user-attachments/assets/af5e0c40-0ba5-4612-a0fa-231a985d8f4a)
 
 ### sort by email or name 
-![image](https://github.com/user-attachments/assets/c767c2dd-b180-4859-81a0-39e4c30cecc4)
+![image](https://github.com/user-attachments/assets/b46e81eb-382c-496c-9345-0b749f51e30e)
 
-### Add User ui 
-![image](https://github.com/user-attachments/assets/971a3458-f1b7-4a45-9f52-13e6b03f0ea0)
-
-![image](https://github.com/user-attachments/assets/c748d607-9c49-4764-a9f1-c2843ccaca61)
-
-### User Detail View
-
-![image](https://github.com/user-attachments/assets/89e62811-c663-479c-9e4d-58ef75300154)
-
-### user list 
-![image](https://github.com/user-attachments/assets/0b8563f7-9d19-489d-9c20-6448bfabcf00)
-![image](https://github.com/user-attachments/assets/6df82be3-1918-4a7d-b49d-8626424e6aee)
 
 
 ### if  user allread present with email or phone number 
 
-![image](https://github.com/user-attachments/assets/d2487efe-c379-4a5b-9edd-c6f1297819ee)
+![image](https://github.com/user-attachments/assets/5640cceb-1a65-4486-a4c1-0144daa9eb91)
 
 ---
 
