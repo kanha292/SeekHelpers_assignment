@@ -50,9 +50,9 @@ All this is built with a clean UI, proper state management using Provider, and F
 
 
 
-### if  user allread present with email or phone number 
+### if  user allready present with email or phone number 
 
-![image](https://github.com/user-attachments/assets/5640cceb-1a65-4486-a4c1-0144daa9eb91)
+![image](https://github.com/user-attachments/assets/78849f90-f81a-4c34-83a6-9388abd96b92)
 
 ---
 
